@@ -103,57 +103,77 @@ const intQuest = [
 function init(questArray) {
     inquirer.prompt(questArray).then((response) => {
         empArray.push(new Manager(response.name, response.id, response.email, response.officeNumber));
-        if (response.addMore === 'Engineer') {
-           engFunc(engQuest);
-            return;
-        } else if (response.addMore === 'Intern') {
-            intFunc(intQuest);
-            return;
-        } else if (response.addMore === 'Finish') {
-            console.log(empArray);
-            //buildHTML
-            return;
-        } else {
-            console.log('There was an error in your selection. Reload the page and start over')
+        switch(response.addMore) {
+            case 'Engineer':
+                engFunc(engQuest);
+                return;
+            case 'Intern':
+                engFunc(intQuest);
+                return;
+            case 'Finish':
+                console.log(empArray);
+                console.log(empArray[0].getRole())
+                //buildHTML
+                 return;
+            default:
+                console.log('Invalid response. Team creation terminated. Previous entries saved.');
         }
+        // if (response.addMore === 'Engineer') {
+        //    engFunc(engQuest);
+        //     return;
+        // } else if (response.addMore === 'Intern') {
+        //     intFunc(intQuest);
+        //     return;
+        // } else if (response.addMore === 'Finish') {
+        //     console.log(empArray);
+        //     console.log(empArray[0].getRole())
+        //     //buildHTML
+        //     return;
+        // } else {
+        //     console.log('There was an error in your selection. Reload the page and start over')
+        // }
     })
 };
 
 function engFunc(engQuest) {
     inquirer.prompt(engQuest).then((response) => {
         empArray.push(new Engineer(response.name, response.id, response.email, response.gitHub));
-        if (response.addMore === 'Engineer') {
-            engFunc(engQuest);
-             return;
-         } else if (response.addMore === 'Intern') {
-             intFunc(intQuest);
-             return;
-         } else if (response.addMore === 'Finish') {
-             console.log(empArray)
-             //buildHTML
-             return;
-         } else {
-             console.log('There was an error in your selection. Reload the page and start over')
-         }
+        switch(response.addMore) {
+            case 'Engineer':
+                engFunc(engQuest);
+                return;
+            case 'Intern':
+                engFunc(intQuest);
+                return;
+            case 'Finish':
+                console.log(empArray);
+                console.log(empArray[0].getRole())
+                //buildHTML
+                 return;
+            default:
+                console.log('Invalid response. Team creation terminated. Previous entries saved.');
+        }
     })
 }
 
 function intFunc(intQuest) {
     inquirer.prompt(intQuest).then((response) => {
         empArray.push(new Intern(response.name, response.id, response.email, response.school));
-        if (response.addMore === 'Engineer') {
-            engFunc(engQuest);
-             return;
-         } else if (response.addMore === 'Intern') {
-             intFunc(intQuest);
-             return;
-         } else if (response.addMore === 'Finish') {
-             console.log(empArray)
-             //buildHTML
-             return;
-         } else {
-             console.log('There was an error in your selection. Reload the page and start over')
-         }
+        switch(response.addMore) {
+            case 'Engineer':
+                engFunc(engQuest);
+                return;
+            case 'Intern':
+                engFunc(intQuest);
+                return;
+            case 'Finish':
+                console.log(empArray);
+                console.log(empArray[0].getRole())
+                //buildHTML
+                 return;
+            default:
+                console.log('Invalid response. Team creation terminated. Previous entries saved.');
+        }
     })
 }
 
