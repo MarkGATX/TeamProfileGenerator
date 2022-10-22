@@ -18,9 +18,10 @@ const mgrQuest = [
         name: 'name',
     },
     {
-        type: 'input',
+        type: 'number',
         message: `What is the Team Manager's employee ID number?`,
         name: 'id',
+                   
     },
     {
         type: 'input',
@@ -28,13 +29,13 @@ const mgrQuest = [
         name: 'email',
     },
     {
-        type: 'input',
+        type: 'number',
         message: `What is the Team Manager's office number?`,
         name: 'officeNumber',
     },
     {
         type: 'list',
-        message: `Would you like to any more Team Members?`,
+        message: `Would you like to add any more Team Members?`,
         choices: ['Engineer', 'Intern', 'Finish'],
         name: 'addMore',
     },
@@ -47,7 +48,7 @@ const engQuest = [
         name: 'name',
     },
     {
-        type: 'input',
+        type: 'number',
         message: `What is the Engineer's employee ID number?`,
         name: 'id',
     },
@@ -63,7 +64,7 @@ const engQuest = [
     },
     {
         type: 'list',
-        message: `Would you like to any more Team Members?`,
+        message: `Would you like to add any more Team Members?`,
         choices: ['Engineer', 'Intern', 'Finish'],
         name: 'addMore',
     },
@@ -76,7 +77,7 @@ const intQuest = [
         name: 'name',
     },
     {
-        type: 'input',
+        type: 'number',
         message: `What is the Intern's employee ID number?`,
         name: 'id',
     },
@@ -92,7 +93,7 @@ const intQuest = [
     },
     {
         type: 'list',
-        message: `Would you like to any more Team Members?`,
+        message: `Would you like to add any more Team Members?`,
         choices: ['Engineer', 'Intern', 'Finish'],
         name: 'addMore',
     },
@@ -109,11 +110,11 @@ function init(questArray) {
             intFunc(intQuest);
             return;
         } else if (response.addMore === 'Finish') {
-            console.log(empArray)
+            console.log(empArray);
             //buildHTML
             return;
         } else {
-            console.log('There was an error in your selection. Reload the page and try again')
+            console.log('There was an error in your selection. Reload the page and start over')
         }
     })
 };
@@ -132,7 +133,7 @@ function engFunc(engQuest) {
              //buildHTML
              return;
          } else {
-             console.log('There was an error in your selection. Reload the page and try again')
+             console.log('There was an error in your selection. Reload the page and start over')
          }
     })
 }
@@ -151,7 +152,7 @@ function intFunc(intQuest) {
              //buildHTML
              return;
          } else {
-             console.log('There was an error in your selection. Reload the page and try again')
+             console.log('There was an error in your selection. Reload the page and start over')
          }
     })
 }
