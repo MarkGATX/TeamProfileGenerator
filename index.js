@@ -113,9 +113,9 @@ function init(questArray) {
                 return;
             case 'Finish':
                 console.log(empArray);
-                console.log(empArray[0].getRole())
-                console.log(empArray[0].name)
-                generateHTML(empArray);
+                console.log(empArray[0].getRole());
+                console.log(empArray[0].name);
+                generator.generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved. Self-destruct program initiated.');

@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const openingCode = `<!DOCTYPE html>
+let openingCode = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,7 +23,7 @@ const openingCode = `<!DOCTYPE html>
         <div class="container-fluid d-flex justify-content-center">
             <section class='row forCards d-flex justify-content-center flex-wrap col-11'>`
 
-const closingCode = `</section>
+let closingCode = `</section>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -34,10 +34,13 @@ const closingCode = `</section>
     
     </html>`
 
-function generateHTML(data) {
+const generateHTML = function(data) {
+    console.log(data);
     let iconName = '';
     let cardInfoClose = '';
     for (i = 0; i < data.length; i++) {
+        console.log(data[i].name)
+        console.log(data[i].getRole())
         switch (data[i].getRole()) {
             case `Manager`:
                 iconName = `coffee`;
@@ -77,7 +80,9 @@ function generateHTML(data) {
 
     const finalCode = openingCode + closingCode
     console.log(finalCode)
+    fs.writeFile('./dist/index.html', finalCode, (err) =>
+  err ? console.error(err) : console.log('Page created!'));
 
 }
 
-module.exports = function generateHTML(){};
+module.exports = {generateHTML};
