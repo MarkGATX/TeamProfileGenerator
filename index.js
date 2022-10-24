@@ -5,7 +5,7 @@ const Employee = require('./lib/Employee')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern');
-// const generator = require('./src/templates')
+const generator = require('./src/templates.js')
 
 
 //set up array of all the employees
@@ -115,7 +115,7 @@ function init(questArray) {
                 console.log(empArray);
                 console.log(empArray[0].getRole())
                 console.log(empArray[0].name)
-                // generator.generateHTML(empArray);
+                generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved. Self-destruct program initiated.');
@@ -136,7 +136,7 @@ function engFunc(engQuest) {
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                // generator.generateHTML(empArray);
+                generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');
@@ -157,7 +157,7 @@ function intFunc(intQuest) {
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                // generator.generateHTML(empArray);
+                generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');

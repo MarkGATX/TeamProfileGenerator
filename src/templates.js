@@ -1,4 +1,4 @@
-
+const fs = require('fs')
 
 const openingCode = `<!DOCTYPE html>
 <html lang="en">
@@ -35,25 +35,27 @@ const closingCode = `</section>
     </html>`
 
 function generateHTML(data) {
+    let iconName = '';
+    let cardInfoClose = '';
     for (i = 0; i < data.length; i++) {
         switch (data[i].getRole()) {
             case `Manager`:
-                let iconName = `coffee`;
-                let cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">Office Number: ${data[0].officeNumber}</a>
+                iconName = `coffee`;
+                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">Office Number: ${data[0].officeNumber}</a>
             </div>
         </div>
     </div>`
                 break;
             case 'Engineer':
-                let iconName = 'Code Blocks';
-                let cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[0].github}</a>
+                iconName = 'Code Blocks';
+                cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[0].github}</a>
             </div>
         </div>
     </div>`
                 break;
             case 'Intern':
-                let iconName = 'school'
-                let cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">School: ${data[0].school}</a>
+                iconName = 'school'
+                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">School: ${data[0].school}</a>
             </div>
         </div>
     </div>`
@@ -62,7 +64,7 @@ function generateHTML(data) {
         let cardInfoOpen = `<div class="card col-md-4 col-lg-3 p-0 mb-5 ms-3 me-3 rounded">
         <div class="card-header w-100 col-12">
             <h3>${data[i].name}</h3>
-            <h4>${data.[i].getRole()}<span class="material-icons">${iconName}</span>
+            <h4>${data[i].getRole()}<span class="material-icons">${iconName}</span>
         </div>
         <div class="card-body ">
             <div class="list-group">
@@ -70,12 +72,12 @@ function generateHTML(data) {
                 <a href="mailto:${data[i].email}" class="list-group-item list-group-item-action">E-mail: ${data[i].email}</a>`
 
 
-         
+        openingCode = openingCode + cardInfoOpen + cardInfoClose
     }
 
-
-
+    const finalCode = openingCode + closingCode
+    console.log(finalCode)
 
 }
 
-module.exports generateHTML();
+module.exports = function generateHTML(){};
