@@ -1,0 +1,30 @@
+/* variables */
+ :root {
+    --darkMain:#00B140;
+    --darkText:#0A0908;
+    --accent:#FC9E4F;
+    --lightAccent:#F7FFDD;
+ }   
+
+/* global */
+body {
+    background-color:var(--lightAccent);
+}
+
+header {
+    background-color: var(--darkMain);
+    color: var(--lightAccent);
+    height:150px;
+}
+
+/* class */
+.card {
+    box-shadow: rgba(0,0,0,.5) 5px 10px 10px, var(--darkMain) 5px 8px 8px;
+}
+
+.card-header {
+    background-color:var(--accent);
+    color:var(--darkText);
+}
+
+/* id */

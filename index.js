@@ -5,6 +5,7 @@ const Employee = require('./lib/Employee')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern');
+// const generator = require('./src/templates')
 
 
 //set up array of all the employees
@@ -113,25 +114,12 @@ function init(questArray) {
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                //buildHTML
+                console.log(empArray[0].name)
+                // generator.generateHTML(empArray);
                  return;
             default:
-                console.log('Invalid response. Team creation terminated. Previous entries saved.');
+                console.log('Invalid response. Team creation terminated. Previous entries saved. Self-destruct program initiated.');
         }
-        // if (response.addMore === 'Engineer') {
-        //    engFunc(engQuest);
-        //     return;
-        // } else if (response.addMore === 'Intern') {
-        //     intFunc(intQuest);
-        //     return;
-        // } else if (response.addMore === 'Finish') {
-        //     console.log(empArray);
-        //     console.log(empArray[0].getRole())
-        //     //buildHTML
-        //     return;
-        // } else {
-        //     console.log('There was an error in your selection. Reload the page and start over')
-        // }
     })
 };
 
@@ -148,7 +136,7 @@ function engFunc(engQuest) {
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                //buildHTML
+                // generator.generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');
@@ -169,7 +157,7 @@ function intFunc(intQuest) {
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                //buildHTML
+                // generator.generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');
