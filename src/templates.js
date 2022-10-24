@@ -9,7 +9,7 @@ let openingCode = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link href='./styles.css' rel="stylesheet">
     <title>Document</title>
@@ -34,7 +34,7 @@ let closingCode = `</section>
     
     </html>`
 
-const generateHTML = function(data) {
+const generateHTML = function (data) {
     console.log(data);
     let iconName = '';
     let cardInfoClose = '';
@@ -42,23 +42,27 @@ const generateHTML = function(data) {
         console.log(data[i].name)
         console.log(data[i].getRole())
         switch (data[i].getRole()) {
+
             case `Manager`:
+                console.log(data[i].getRole())
                 iconName = `coffee`;
-                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">Office Number: ${data[0].officeNumber}</a>
+                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">Office Number: ${data[i].officeNumber}</a>
             </div>
         </div>
     </div>`
                 break;
             case 'Engineer':
-                iconName = 'Code Blocks';
-                cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[0].github}</a>
+                console.log(data[i].getRole())
+                iconName = 'developer_mode';
+                cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[i].gitHub}</a>
             </div>
         </div>
     </div>`
                 break;
             case 'Intern':
+                console.log(data[i].getRole())
                 iconName = 'school'
-                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">School: ${data[0].school}</a>
+                cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">School: ${data[i].school}</a>
             </div>
         </div>
     </div>`
@@ -81,8 +85,8 @@ const generateHTML = function(data) {
     const finalCode = openingCode + closingCode
     console.log(finalCode)
     fs.writeFile('./dist/index.html', finalCode, (err) =>
-  err ? console.error(err) : console.log('Page created!'));
+        err ? console.error(err) : console.log('Page created!'));
 
 }
-
-module.exports = {generateHTML};
+45
+module.exports = { generateHTML };

@@ -131,12 +131,12 @@ function engFunc(engQuest) {
                 engFunc(engQuest);
                 return;
             case 'Intern':
-                engFunc(intQuest);
+                intFunc(intQuest);
                 return;
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                generateHTML(empArray);
+                generator.generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');
@@ -152,12 +152,12 @@ function intFunc(intQuest) {
                 engFunc(engQuest);
                 return;
             case 'Intern':
-                engFunc(intQuest);
+                intFunc(intQuest);
                 return;
             case 'Finish':
                 console.log(empArray);
                 console.log(empArray[0].getRole())
-                generateHTML(empArray);
+                generator.generateHTML(empArray);
                  return;
             default:
                 console.log('Invalid response. Team creation terminated. Previous entries saved.');
