@@ -35,16 +35,12 @@ let closingCode = `</section>
     </html>`
 
 const generateHTML = function (data) {
-    console.log(data);
     let iconName = '';
     let cardInfoClose = '';
     for (i = 0; i < data.length; i++) {
-        console.log(data[i].name)
-        console.log(data[i].getRole())
         switch (data[i].getRole()) {
 
             case `Manager`:
-                console.log(data[i].getRole())
                 iconName = `coffee`;
                 cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">Office Number: ${data[i].officeNumber}</a>
             </div>
@@ -52,7 +48,6 @@ const generateHTML = function (data) {
     </div>`
                 break;
             case 'Engineer':
-                console.log(data[i].getRole())
                 iconName = 'developer_mode';
                 cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[i].gitHub}</a>
             </div>
@@ -60,7 +55,6 @@ const generateHTML = function (data) {
     </div>`
                 break;
             case 'Intern':
-                console.log(data[i].getRole())
                 iconName = 'school'
                 cardInfoClose = `<a href="#" class="list-group-item list-group-item-action disabled">School: ${data[i].school}</a>
             </div>
