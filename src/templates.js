@@ -88,5 +88,5 @@ const generateHTML = function (data) {
         err ? console.error(err) : console.log('Page created!'));
 
 }
-45
+
 module.exports = { generateHTML };
