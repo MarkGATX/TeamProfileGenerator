@@ -19,7 +19,11 @@ header {
 
 /* class */
 .card {
-    box-shadow: rgba(0,0,0,.5) 5px 10px 10px, var(--darkMain) 5px 8px 8px;
+    box-shadow: rgba(0,0,0,.5) 3px 5px 5px, var(--darkMain) 2px 4px 4px;
+}
+
+.card:hover {
+    box-shadow: rgba(0,0,0,.5) 10px 20px 20px, var(--darkMain) 10px 16px 16px;
 }
 
 .card-header {

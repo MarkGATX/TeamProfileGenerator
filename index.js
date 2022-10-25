@@ -112,9 +112,6 @@ function init(questArray) {
                 engFunc(intQuest);
                 return;
             case 'Finish':
-                console.log(empArray);
-                console.log(empArray[0].getRole());
-                console.log(empArray[0].name);
                 generator.generateHTML(empArray);
                  return;
             default:
@@ -134,8 +131,6 @@ function engFunc(engQuest) {
                 intFunc(intQuest);
                 return;
             case 'Finish':
-                console.log(empArray);
-                console.log(empArray[0].getRole())
                 generator.generateHTML(empArray);
                  return;
             default:
@@ -155,8 +150,6 @@ function intFunc(intQuest) {
                 intFunc(intQuest);
                 return;
             case 'Finish':
-                console.log(empArray);
-                console.log(empArray[0].getRole())
                 generator.generateHTML(empArray);
                  return;
             default:

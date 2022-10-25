@@ -71,7 +71,7 @@ const generateHTML = function (data) {
         let cardInfoOpen = `<div class="card col-md-4 col-lg-3 p-0 mb-5 ms-3 me-3 rounded">
         <div class="card-header w-100 col-12">
             <h3>${data[i].name}</h3>
-            <h4>${data[i].getRole()}<span class="material-icons">${iconName}</span>
+            <h4>${data[i].getRole()}<span class="material-icons ps-3">${iconName}</span>
         </div>
         <div class="card-body ">
             <div class="list-group">
@@ -83,7 +83,7 @@ const generateHTML = function (data) {
     }
 
     const finalCode = openingCode + closingCode
-    console.log(finalCode)
+   
     fs.writeFile('./dist/index.html', finalCode, (err) =>
         err ? console.error(err) : console.log('Page created!'));
 
