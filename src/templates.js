@@ -12,7 +12,7 @@ let openingCode = `<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link href='./styles.css' rel="stylesheet">
-    <title>Document</title>
+    <title>Development Team Generator</title>
 </head>
 <main>
     <header class="container-fluid d-flex align-items-middle justify-content-center bg-success align-items-center mb-5 ">
@@ -49,7 +49,7 @@ const generateHTML = function (data) {
                 break;
             case 'Engineer':
                 iconName = 'developer_mode';
-                cardInfoClose = `<a href="https://github.com/${data[i].github}" class="list-group-item list-group-item-action">GitHub: ${data[i].gitHub}</a>
+                cardInfoClose = `<a href="https://github.com/${data[i].gitHub}" class="list-group-item list-group-item-action">GitHub: ${data[i].gitHub}</a>
             </div>
         </div>
     </div>`

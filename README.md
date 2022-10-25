@@ -12,7 +12,7 @@ Our introduction to Node.js and object oriented programming culminates in this p
 
 Because this isn't a deployed app, there's not a link to a live site showing it's functionality. Instead you can watch a short video here that shows how it works at its most basic.
 
-[Video of the Development Team Generator in Action](https://drive.google.com/file/d/1PgMaogqjyPMWG65fGfvCapL-shlBhVVz/view)
+[Video of the Development Team Generator in Action](https://drive.google.com/file/d/1lSUTUFGxwM-rN99UC_Orp-QTecgInhgt/view)
 
 
 ___
